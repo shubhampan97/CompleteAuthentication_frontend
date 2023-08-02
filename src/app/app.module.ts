@@ -14,7 +14,7 @@ import { ForgotComponent } from './pages/forgot/forgot.component';
 import { ResetComponent } from './pages/reset/reset.component';
 import { FormComponent } from './pages/login/form/form.component';
 import { AuthenticatorComponent } from './pages/login/authenticator/authenticator.component';
-import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule, GoogleSigninButtonModule, GoogleSigninButtonDirective } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,9 @@ import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } f
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule
   ],
   providers: [
     {
@@ -53,7 +55,8 @@ import { GoogleLoginProvider, FacebookLoginProvider, SocialAuthServiceConfig } f
           }
         ]
       },
-    }
+    },
+    GoogleSigninButtonDirective
   ],
   bootstrap: [AppComponent]
 })

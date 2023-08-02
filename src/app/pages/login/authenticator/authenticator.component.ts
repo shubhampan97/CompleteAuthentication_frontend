@@ -35,7 +35,6 @@ export class AuthenticatorComponent implements OnInit {
       ...data
     }).subscribe(
       (res:any)=>{
-        debugger
         this.authService.accessToken = res.accessToken;
         AuthService.authEmitter.emit(true);
         this.router.navigate(['/'])
