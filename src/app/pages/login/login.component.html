@@ -1,21 +1,3 @@
-<main class="form-signin w-100 m-auto">
-    <form [formGroup]="form" (submit)="submit()">
-      <h1 class="h3 mb-3 fw-normal">Please login</h1>
-    
-      <div class="form-floating">
-        <input type="email" class="form-control" formControlName="email" placeholder="Email">
-        <label>Email address</label>
-      </div>
+<app-form (onLogin)="onLogin($event)" *ngIf="loginData.id === 0"></app-form>
 
-      <div class="form-floating">
-        <input type="password" class="form-control" formControlName="password" placeholder="Password">
-        <label>Password</label>
-      </div>
-
-      <div class="mb-3">
-        <a routerLink="/forgot">Forgot Password?</a>
-      </div>
-  
-      <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
-    </form>
-  </main>
+<app-authenticator [loginData]="loginData" *ngIf="loginData.id !== 0"></app-authenticator>

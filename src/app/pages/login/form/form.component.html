@@ -1,0 +1,24 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="form" (submit)="submit()">
+      <h1 class="h3 mb-3 fw-normal">Please login</h1>
+    
+      <div class="form-floating">
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+        <label>Email address</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <label>Password</label>
+      </div>
+
+      <div class="mb-3">
+        <a routerLink="/forgot">Forgot Password?</a>
+      </div>
+  
+      <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+    </form>
+
+    <!-- <a href="javascript:void(0)" class="btn btn-outline-danger text-center mt-3 w-100" (click)="googleLogin()">Login with Google</a> -->
+    <asl-google-signin-button type='standard' size='large' class="btn btn-outline-danger text-center mt-3 w-100" ></asl-google-signin-button>
+  </main>
